@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blogs Actuales{% endblock %}
+
+{% block body %}
+
+<div class="container" style="width:50%">
+   <div class="jumbotron"> 
+     <div class = "row">
+        <div class = "col-md-12 "><h2 class="display-3">{{ entrada.titulo }}</h2></div>
+        <div class = "col-md-12">&nbsp;</div>
+        <div class = "col-md-4 ">
+        </div>
+        <div class = "col-md-4">
+            <img src = "{{ asset('imagenes/'~ entrada.imagen) }}" class="img-fluid" />
+        </div>
+        <div class = "col-md-4"> 
+        </div>
+        <div class = "col-md-12">&nbsp;</div>
+        <div class = "col-md-12">&nbsp;</div>
+        <div class="col-md-12">
+            <p class="text-left">{{ entrada.contenido }}</p>
+        </div>
+        <div class = "col-md-12">&nbsp;</div>
+        <div class="col-md-6">
+            <strong>Autor: </strong><label> {{ entrada.usuario.nombre ~ ' ' ~ entrada.usuario.apellido }} </label> 
+        </div>
+        <div class="col-md-6">
+            <strong>Creado el: </strong><label> {{ entrada.creacion|date('d/m/Y h:i:s')}}</label> 
+        </div>
+    
+      </div>
+    </div>
+</div>
+{% endblock %}
+

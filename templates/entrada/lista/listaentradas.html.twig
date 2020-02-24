@@ -1,0 +1,23 @@
+{% if entradas|length  >= 1 %}
+    {% for  entrada in entradas  %}
+    <div class="col-md-4">
+    <a href="{{ path('detalle', {'id':entrada.id }) }}" class="btn ">
+      <div class="card" style="width: 18rem;">
+        <img src = "{{ asset('imagenes/'~ entrada.imagen) }}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ entrada.titulo }}</h5>
+          <p class="card-text">{{ entrada.contenido }}</p>
+           
+          {% if  app.user != null  and app.user.id == entrada.usuario.id  %}
+            <a href ="{{ path('editar', {'id':entrada.id }) }}" class="btn btn-primary" >Editar </a>
+            <a href ="{{ path('eliminar', {'id':entrada.id }) }}" class="btn btn-danger">Eliminar </a>
+          {% endif %} 
+        </div>
+      </div>
+     </a>   
+    </div>
+    {% endfor %} 
+{% else %}
+        <strong>No hay post por el momento </strong>
+{% endif %}
+

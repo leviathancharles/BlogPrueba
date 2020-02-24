@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="container" style="width:50%">
+    <div class="jumbotron">
+        <div class = "row">
+            <div class = "col-md-12 "><h1 class="display-3">Bienvenidos al Blog de Opiniones</h1></div>
+            <div class = "col-md-12">&nbsp;</div>
+            <div class = "col-md-12 ">
+                
+                {% if app.user  %}
+                    <p class="text-left">
+                        Hola soy Carlos en creador del blog sean bievenidos a este su blog de opiniones 
+                        donde podran dar su punto de vista de cualquier cosa que quieran hablar asi siempre
+                        estaran enterados de la actualidad y opinones de las personas
+                    </p>
+                {% else %}
+                    <p class="text-left">
+                        Hola soy Carlos en creador del blog sean bievenidos a este su blog de opiniones 
+                        donde podran dar su punto de vista de cualquier cosa que quieran hablar asi siempre
+                        estaran enterados de la actualidad y opinones de las personas
+                    </p>
+                    <p class="text-left">
+                        Si quieran sacar mas provecho al blog y quieran ingresar sus propias opiniones no lo duden
+                        registrensen para ser parte de esta gran comunidad que poco a poco va creciendo, si eso quieren 
+                        puede hacer click en el siguiente enlace <a href="{{ path('login') }}">Inscribete ya!!!</a>
+                    </p>     
+                {% endif %}
+
+             
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

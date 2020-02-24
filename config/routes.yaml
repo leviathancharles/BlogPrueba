@@ -1,0 +1,43 @@
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+entradas:
+    path: /entradas
+    controller: App\Controller\EntradaController::index
+
+crear:
+    path: /crear
+    controller: App\Controller\EntradaController::crear    
+
+detalle:
+    path: /detalle/{id}
+    controller: App\Controller\EntradaController::detalle
+
+editar:
+    path: /editar/{id}
+    controller: App\Controller\EntradaController::actualizar
+
+eliminar:
+    path: /eliminar/{id}
+    controller: App\Controller\EntradaController::eliminar     
+
+mis_blogs:
+    path: /mis-blogs
+    controller: App\Controller\EntradaController::misEntradas
+
+contacto:
+    path: /contacto
+    controller: App\Controller\ContactoController::crearContacto
+
+registro:
+    path: /registro
+    controller: App\Controller\UsuarioController::registro
+
+login:
+    path: /login
+    controller: App\Controller\UsuarioController::login
+
+logout:
+    path: /logout
+    

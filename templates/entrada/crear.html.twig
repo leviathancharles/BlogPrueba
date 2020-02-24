@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if editar %}
+        Modificar 
+    {% else %}
+          Crear
+    {% endif %}
+
+ Blog
+{% endblock %}
+
+{% block body %}
+
+<div class="container" style="width:50%">
+    <div class="form-group">
+        <div class = "row">
+            <div class = "col-md-12 ">
+                <h1 class="display-3">
+                  {% if editar %}
+                    Modificar  
+                  {% else %}
+                    Crear 
+                  {% endif %}
+                   Blog
+                </h1>
+            </div>
+            <div class = "col-md-12">&nbsp;</div>
+        </div>
+          {{ form_start(form)}}
+          {{ form_widget(form)}}
+          {{ form_end(form)}}  
+    </div>
+</div>
+{% endblock %}

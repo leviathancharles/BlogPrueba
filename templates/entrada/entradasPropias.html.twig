@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mis Blogs Actuales{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+       <div class = "col-md-12 "><h1 class="display-3">Mi Lista de Blogs</h1></div>
+       <div class = "col-md-12">&nbsp;</div>
+       <div class = "col-md-12">
+            <a href ="{{ path('crear') }}" class="btn btn-primary" style ="margin-top:20px">Nuevo Blog </a>
+       </div>
+          {{ include('entrada/lista/listaentradas.html.twig') }}
+      
+    </div>
+</div>
+  
+
+{% endblock %}
